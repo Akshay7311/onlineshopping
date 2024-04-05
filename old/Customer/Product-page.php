@@ -195,7 +195,7 @@ if (isset($_GET['product_id'])) {
                     $productDetails = mysqli_fetch_assoc($result);
                     // Determine the image path for the product
                     $image = isset($productDetails['product_image']) ? $productDetails['product_image'] : '';
-                    $imagePath = '../images/' . $image;
+                    $imagePath = '../../admin_area/product_images/' . $image;
                     ?>
                 <!-- Display product image -->
                 <div class="product-details">

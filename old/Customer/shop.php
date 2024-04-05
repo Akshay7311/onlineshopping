@@ -156,9 +156,9 @@ h1 a {
                 while ($row = mysqli_fetch_assoc($resultProducts)) {
                     echo '<div class="product">';
                     $image = isset($row['product_image']) ? $row['product_image'] : '';
-                    $imagePath = '../images/' . $image;
+                    $imagePath = '../../admin_area/product_images/' . $image;
                     echo "<a href='Product-page.php?product_id={$row['product_id']}'>
-                            <img src='../images/" . $row['product_image'] . "' alt='Product Image'>
+                            <img src='../../admin_area/product_images/" . $row['product_image'] . "' alt='Product Image'>
                          </a>";
                     echo '<h3>' . $row['product_title'] . '</h3>';
                     echo '</div>';

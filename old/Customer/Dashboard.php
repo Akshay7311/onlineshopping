@@ -160,7 +160,7 @@ h1 a {
                     while ($row = mysqli_fetch_assoc($resultProducts)) {
                         echo '<div class="product">';
                         echo "<a href='Product-page.php?product_id={$row['product_id']}'>
-                         <img height='100' src='../images/" . $row['product_image'] . "' alt='Product Image'>
+                         <img height='100' src='../../admin_area/product_images/" . $row['product_image'] . "' alt='Product Image'>
                          </a>";
                         echo '<h3>' . $row['product_title'] . '</h3>';
                         echo '</div>';
