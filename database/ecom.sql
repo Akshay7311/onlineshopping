@@ -39,8 +39,8 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`user_id`, `user_email`, `user_pass`) VALUES
-(1, 'dividthelogan@gmail.com', '1230'),
-(2, 'logan123@gmail.com', '0321');
+(11, 'dividthelogan@gmail.com', '1230'),
+(22, 'logan123@gmail.com', '0321'),(3, 'test@gmail.com', '123');
 
 -- --------------------------------------------------------
 
@@ -157,13 +157,13 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_cat`, `product_brand`, `product_title`, `product_price`, `product_desc`, `product_image`, `product_keywords`, `product_id`) VALUES
-(1, 2, 'Dell core i5', 65000, 'A Good one to consider once.', 'dell_7460_i5-7200u.gif', 'lappy, dell,core i5,Laptop', 17),
-(3, 4, 'Samsung J7', 8999, 'Android Phone.', 'source.gif', 'android,mobile,samsung', 18),
-(2, 8, 'Nikkon Camera', 125000, 'More clear and vivid pictures are waiting for you.', 'nikon_1555_d7200_dslr_camera_with_1127272.jpg', 'camera,nikkon,dslr', 19),
-(1, 5, 'Sony Ultrabook', 55000, 'Sony Laptop', 'download (2).jpeg', 'lappy, sony,laptop', 20),
-(1, 1, 'HP Pavilion', 65000, 'HP Laptop.', 'HP_Hybridth.gif', 'lappy,hp,notebook,laptop', 21),
-(3, 4, 'Samsung Galaxy II', 11999, 'Android phone with decent specs.', 'micromax-canvas-4-plus-a315(1).jpg', 'mobile, android, phone, samsung,', 26);
+INSERT INTO `products` (`user_id`, `product_cat`, `product_brand`, `product_title`, `product_price`, `product_desc`, `product_image`, `product_keywords`, `product_id`) VALUES
+(3, 1, 2, 'Dell core i5', 65000, 'A Good one to consider once.', 'dell_7460_i5-7200u.gif', 'lappy, dell,core i5,Laptop', 17),
+(3, 3, 4, 'Samsung J7', 8999, 'Android Phone.', 'source.gif', 'android,mobile,samsung', 18),
+(3, 2, 8, 'Nikkon Camera', 125000, 'More clear and vivid pictures are waiting for you.', 'nikon_1555_d7200_dslr_camera_with_1127272.jpg', 'camera,nikkon,dslr', 19),
+(3, 1, 5, 'Sony Ultrabook', 55000, 'Sony Laptop', 'download (2).jpeg', 'lappy, sony,laptop', 20),
+(3, 1, 1, 'HP Pavilion', 65000, 'HP Laptop.', 'HP_Hybridth.gif', 'lappy,hp,notebook,laptop', 21),
+(1, 3, 4, 'Samsung Galaxy II', 11999, 'Android phone with decent specs.', 'micromax-canvas-4-plus-a315(1).jpg', 'mobile, android, phone, samsung,', 26);
 
 --
 -- Indexes for dumped tables
