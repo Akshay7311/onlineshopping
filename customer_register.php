@@ -1,15 +1,9 @@
-   
-
-
-
-  <!Doctype>
+<!Doctype>
 <?php
   session_start();
 include("functions/functions.php");
 include("includes/db.php");
 ?>
-
-
 
 <html>
 <head>

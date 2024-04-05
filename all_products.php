@@ -97,10 +97,6 @@ include("functions/functions.php");
                ?>
 
 
-
-
-
-
                 </span>
 
              </div> 
@@ -147,31 +143,13 @@ include("functions/functions.php");
 			              </div>
           </div>
 
-
-     
     </div>
      <!-- CONTENTS SECTION ENDS HERE -->
-
-        
-
          <div id="footer">
                           <h2 style="text-align: center;padding-top: 10px ">&copy By ASHUTOSH RAJ</h2>
          </div>
 
-
-
-
 </div>
 <!-- MAIN CONTAINER ENDS HERE-->
-
-
-
-
-
-
-
 </body>
 </html>
-
-
-
