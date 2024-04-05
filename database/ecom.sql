@@ -142,6 +142,7 @@ INSERT INTO `customers` (`customer_id`, `customer_ip`, `customer_name`, `custome
 --
 
 CREATE TABLE `products` (
+  `user_id` int(11) NOT NULL,
   `product_cat` int(100) NOT NULL,
   `product_brand` int(100) NOT NULL,
   `product_title` varchar(255) NOT NULL,
