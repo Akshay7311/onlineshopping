@@ -220,6 +220,8 @@ if (isset($_GET['product_id'])) {
                 <div class="button-container">
                     <form method="post" action="checkout.php">
                         <input type="hidden" name="product_id" value="<?php echo $productDetails['product_id']; ?>">
+                        <input type="hidden" name="product_price"
+                            value="<?php echo $productDetails['product_price']; ?>">
                         <button type="submit" class="button" name="buy_now">BUY NOW</button>
                     </form>
                 </div>
