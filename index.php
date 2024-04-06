@@ -1,116 +1,117 @@
-<?php 
-session_start();
-if(!isset($_SESSION['user_email']))
-{
-
-echo "<script> window.open('login.php?not_admin=You are not a admin !','_self') </script>";
-
-
+<?php
+include("old/config.php");
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping</title>
+</head>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-else
-{
+header {
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    color: white;
+    padding: 18px;
+    font-weight: bold !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-weight: bold;
+    margin: 0;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white !important;
+    font-weight: bold !important;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+footer {
+    border-color: black;
+    background-color: white;
+    color: black;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+    
+}
+
+.container-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+}
 
 
-?>
+h1 a {
+    color: #fff !important;
+}
 
-<!DOCTYPE html>
-<html>
-<head>
-
-  <!--<style><?php include 'styles/style.css'; ?></style>  -->
-
-  <link rel="stylesheet" type="text/css" href="styles/style.css" media="all" />
-	<title>Admin Panel </title>
-</head>
+.heading a {
+    font-weight:500;
+    color: black !important;
+    font-size: 2.2em;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-weight: bold;
+}
+section{
+    background-color: red;
+}
+ .center{
+    height:78vh;
+    width: 100vw;
+    background-image: url('old/images/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+</style>
 <body>
-
-
-	<div class="main_wrapper">
-   
-  <img src="images/head" height="99px" width="1352">
-  
-     <div id="header"></div>
-
-     <div id="right">
-     	    <h2 style="text-align: center; color: yellow;">Manage Content</h2>
-
-     	    <a href="index.php?insert_product">Insert Product</a>
-     	     <a href="index.php?view_products">View Product</a>
-     	      <a href="index.php?insert_cat">Insert New Category</a>
-     	       <a href="index.php?view_cats">View All Categories</a>
-     	        <a href="index.php?insert_brand">Insert New Brand</a>
-     	         <a href="index.php?view_brands">View All Brands</a>
-     	          <a href="index.php?view_customers">View Customers</a>
-     	           <a href="index.php?view_orders">View Orders</a>
-     	            <a href="index.php?view_payments">View Payments</a>
-     	             <a href="logout.php">Admin Logout</a>
-
-
-
-     </div>
-
-     <div id="left">
-      <h2 style="color: red; text-align: center;"> <?php echo @$_GET['logged_in'];   ?> </h2>
-     	<?php
-               if(isset($_GET['insert_product']))
-               {
-               	include("insert_product.php");
-               }
-
-               if(isset($_GET['view_products']))
-               {
-               	include("view_products.php");
-                }
-
-                if(isset($_GET['edit_pro']))
-               {
-               	include("edit_pro.php");
-               }
-
-                if(isset($_GET['insert_cat']))
-               {
-                include("insert_cat.php");
-               }
-
-                if(isset($_GET['view_cats']))
-               {
-                include("view_cats.php");
-               }
-
-                if(isset($_GET['edit_cat']))
-               {
-                include("edit_cat.php");
-               }
-
-                if(isset($_GET['insert_brand']))
-               {
-                include("insert_brand.php");
-               }
-
-               if(isset($_GET['view_brands']))
-               {
-                include("view_brands.php");
-               }
-                
-                if(isset($_GET['edit_brand']))
-               {
-                include("edit_brand.php");
-               }
-
-               if(isset($_GET['view_customers']))
-               {
-                include("view_customers.php");
-               }
-
-     	?>
-     </div>
-
-
-	</div>
-
+<header>
+    <h1>Online Shopping</h1>
+    <nav>
+        <a href="admin_area/index.php">Admin</a>
+        <a href="seller/index.php">Seller</a>
+        <a href="old/Customer/login.php">Customer</a>
+        <!-- Add more navigation links as needed --> 
+    </nav>
+</header>
+<section>
+    <div class="center"></div>
+</section>
+<footer>
+    <div class="container-1">
+        <p class="heading"><a href="#top">Online Shopping</a></p>
+        <p class="discription">Online shopping revolutionizes retail by allowing consumers to explore products, compare prices, and make secure transactions from home, simplifying the purchasing process and providing a personalized experience.</p>
+    </div>
+</footer>
 </body>
-</html>   
-
-
-<?php } ?>
+</html>

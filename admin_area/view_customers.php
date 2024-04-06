@@ -11,14 +11,10 @@ echo "<script> window.open('login.php?not_admin=You are not a admin !','_self') 
 else
 {
 
-
-
-
 ?>
-
-
-
-
+<html>
+<body>
+	
    <table width="1078"  align="center"  bgcolor="skyblue">
    	
 <tr align="center">
@@ -65,14 +61,8 @@ while($row_c=mysqli_fetch_array($run_c))
 
 </tr>
 
-
 <?php } ?>
-
-
-
-
    </table>
-  
-
-
 <?php } ?>
+</body>
+</html>

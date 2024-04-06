@@ -27,7 +27,7 @@ if (!isset($_SESSION['user_email'])) {
     <div class="main_wrapper">
         <div class="header"
             style="width:100%; padding: 10px ;display: inline-flex; align-items: center; justify-content: space-between">
-            <h1>Online Store</h1>
+            <h1>Online Shopping</h1>
             <p style="margin: 0px 20px; font-size:1.4rem;">Content Manage</p>
         </div>
 
@@ -45,7 +45,7 @@ if (!isset($_SESSION['user_email'])) {
             <a href="index.php?view_brands">View All Brands</a>
             <a href="index.php?view_orders">View Orders</a>
             <a href="index.php?view_payments">View Payments</a>
-            <a href="logout.php">Admin Logout</a>
+            <a href="logout.php">Seller Logout</a>
 
 
 

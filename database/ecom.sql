@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Aug 27, 2018 at 04:09 PM
--- Server version: 10.1.33-MariaDB
--- PHP Version: 7.1.18
+-- Host: 127.0.0.1
+-- Generation Time: Apr 05, 2024 at 11:35 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -32,15 +31,16 @@ CREATE TABLE `admins` (
   `user_id` int(10) NOT NULL,
   `user_email` varchar(255) NOT NULL,
   `user_pass` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `admins`
 --
 
 INSERT INTO `admins` (`user_id`, `user_email`, `user_pass`) VALUES
-(11, 'dividthelogan@gmail.com', '1230'),
-(22, 'logan123@gmail.com', '0321'),(3, 'test@gmail.com', '123');
+(1, 'dividthelogan@gmail.com', '1230'),
+(2, 'logan123@gmail.com', '0321'),
+(3, 'test@gmail.com', '123');
 
 -- --------------------------------------------------------
 
@@ -51,7 +51,7 @@ INSERT INTO `admins` (`user_id`, `user_email`, `user_pass`) VALUES
 CREATE TABLE `brands` (
   `brand_id` int(100) NOT NULL,
   `brand_title` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `brands`
@@ -77,7 +77,7 @@ CREATE TABLE `cart` (
   `p_id` int(10) NOT NULL,
   `qty` int(10) NOT NULL,
   `ip_add` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `cart`
@@ -95,7 +95,7 @@ INSERT INTO `cart` (`p_id`, `qty`, `ip_add`) VALUES
 CREATE TABLE `categories` (
   `cat_id` int(100) NOT NULL,
   `cat_title` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `categories`
@@ -126,7 +126,7 @@ CREATE TABLE `customers` (
   `customer_contact` varchar(255) NOT NULL,
   `customer_address` text NOT NULL,
   `customer_image` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `customers`
@@ -151,7 +151,7 @@ CREATE TABLE `products` (
   `product_image` text NOT NULL,
   `product_keywords` text NOT NULL,
   `product_id` int(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `products`
@@ -159,11 +159,45 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`user_id`, `product_cat`, `product_brand`, `product_title`, `product_price`, `product_desc`, `product_image`, `product_keywords`, `product_id`) VALUES
 (3, 1, 2, 'Dell core i5', 65000, 'A Good one to consider once.', 'dell_7460_i5-7200u.gif', 'lappy, dell,core i5,Laptop', 17),
-(3, 3, 4, 'Samsung J7', 8999, 'Android Phone.', 'source.gif', 'android,mobile,samsung', 18),
-(3, 2, 8, 'Nikkon Camera', 125000, 'More clear and vivid pictures are waiting for you.', 'nikon_1555_d7200_dslr_camera_with_1127272.jpg', 'camera,nikkon,dslr', 19),
-(3, 1, 5, 'Sony Ultrabook', 55000, 'Sony Laptop', 'download (2).jpeg', 'lappy, sony,laptop', 20),
-(3, 1, 1, 'HP Pavilion', 65000, 'HP Laptop.', 'HP_Hybridth.gif', 'lappy,hp,notebook,laptop', 21),
-(1, 3, 4, 'Samsung Galaxy II', 11999, 'Android phone with decent specs.', 'micromax-canvas-4-plus-a315(1).jpg', 'mobile, android, phone, samsung,', 26);
+(3, 3, 4, 'Samsung J7', 8999, 'Android Phone.', 'dell_7460_i5-7200u.gif', 'android,mobile,samsung', 18),
+(3, 2, 8, 'Nikkon Camera', 125000, 'More clear and vivid pictures are waiting for you.', 'dell_7460_i5-7200u.gif', 'camera,nikkon,dslr', 19),
+(3, 1, 5, 'Sony Ultrabook', 55000, 'Sony Laptop', 'dell_7460_i5-7200u.gif', 'lappy, sony,laptop', 20),
+(3, 1, 1, 'HP Pavilion', 65000, 'HP Laptop.', 'dell_7460_i5-7200u.gif', 'lappy,hp,notebook,laptop', 21),
+(1, 0, 0, 'Samsung Galaxy II', 12999, '<p>Android phone with decent specs.</p>', 'dell_7460_i5-7200u.gif', 'mobile, android, phone, samsung,', 26),
+(2, 6, 5, 'New phone', 20000, '', 'original-06bfed46b9accf4221ee69fd68d90f58.jpg', 'phone', 28),
+(1, 1, 1, 'test', 65000, 'sdasdasd', 'dell_7460_i5-7200u.gif', 'adsdasd', 30);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sellers`
+--
+
+CREATE TABLE `sellers` (
+  `seller_id` int(11) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `Phone_number` varchar(15) DEFAULT NULL,
+  `Address_line1` varchar(255) DEFAULT NULL,
+  `Address_line2` varchar(255) DEFAULT NULL,
+  `Acc_no` varchar(20) DEFAULT NULL,
+  `Bank_Name` varchar(255) DEFAULT NULL,
+  `Branch` varchar(255) DEFAULT NULL,
+  `Ifsc_Code` varchar(20) DEFAULT NULL,
+  `Registration_date` date DEFAULT NULL,
+  `Pancard` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `sellers`
+--
+
+INSERT INTO `sellers` (`seller_id`, `first_name`, `last_name`, `email`, `username`, `password`, `Phone_number`, `Address_line1`, `Address_line2`, `Acc_no`, `Bank_Name`, `Branch`, `Ifsc_Code`, `Registration_date`, `Pancard`) VALUES
+(1, 'test', 'first', 'test@gmail.com', 'testUsername', '123', '88888888888', 'test address', 'test address', '23232321212123', 'test Bank', 'Test branch', 'testifsccode', NULL, 'dasdas2322d'),
+(2, 'test ', 'second', 'test2@gmail.com', 'test username 2 ', '123', '88888888888', 'seller_id addresss', 'seller_id addresss', '23232321212123', 'test bank', 'test branch', 'testifsccode', NULL, 'dasdas2322d');
 
 --
 -- Indexes for dumped tables
@@ -207,6 +241,12 @@ ALTER TABLE `products`
   ADD UNIQUE KEY `product_id` (`product_id`);
 
 --
+-- Indexes for table `sellers`
+--
+ALTER TABLE `sellers`
+  ADD PRIMARY KEY (`seller_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -214,7 +254,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `brands`
@@ -238,7 +278,13 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `product_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT for table `sellers`
+--
+ALTER TABLE `sellers`
+  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
