@@ -3,11 +3,11 @@
 
 <?php
 
- include("includes/db.php");
+ include("../includes/db.php");
 
 $total=0;
   global $con;
-  $ip=getIp();
+  // $ip=getIp();
   $sel_price="select * from cart where ip_add='$ip'";
   $run_price=mysqli_query($con,$sel_price);
 
